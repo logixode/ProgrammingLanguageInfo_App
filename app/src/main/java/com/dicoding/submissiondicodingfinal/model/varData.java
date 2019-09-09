@@ -1,6 +1,31 @@
 package com.dicoding.submissiondicodingfinal.model;
 
-public class varData {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class varData implements Parcelable {
+    protected varData(Parcel in) {
+        name = in.readString();
+        from = in.readString();
+        photo = in.readString();
+    }
+
+    public static final Creator<varData> CREATOR = new Creator<varData>() {
+        @Override
+        public varData createFromParcel(Parcel in) {
+            return new varData(in);
+        }
+
+        @Override
+        public varData[] newArray(int size) {
+            return new varData[size];
+        }
+    };
+
+    public varData() {
+
+    }
+
     public String getName() {
         return name;
     }
@@ -26,4 +51,16 @@ public class varData {
     }
 
     private String name, from, photo;
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(name);
+        dest.writeString(from);
+        dest.writeString(photo);
+    }
 }

@@ -18,7 +18,7 @@ import java.util.Objects;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView rvList;
-    private ArrayList<varData> list = new ArrayList<>();
+    private ArrayList<varData>list = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Programming Language");
         getSupportActionBar().setSubtitle("Macam - macam Bahasa Pemrograman");
-//        Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
 
-//        toolbar.setSubtitle("https://");
-//        toolbar.setLogo();
-        rvList = findViewById(R.id.rv_list);
+        rvList = (RecyclerView)findViewById(R.id.rv_list);
         rvList.setHasFixedSize(true);
 
         list.addAll(ListBahasa.getListData());
@@ -50,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void showRecyclerList() {
         rvList.setLayoutManager(new LinearLayoutManager(this));
-        MainAdapter mainAdapter = new MainAdapter(list);
+//        MainAdapter mainAdapter = new MainAdapter(list);
+        MainAdapter mainAdapter = new MainAdapter(this);
+        MainAdapter.setList(list);
         rvList.setAdapter(mainAdapter);
 
 

@@ -33,6 +33,15 @@
                 android:alignmentMode="alignMargins"
                 android:columnOrderPreserved="false">
 
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:id="@+id/img_item_photo"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"/>
+
                 <LinearLayout>
 
                     <TextView
@@ -43,6 +52,7 @@
                         android:textSize="12sp"
                         android:layout_marginBottom="8dp"/>
                     <TextView
+                        android:id="@+id/tv_item_titlevalue"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="asdf"

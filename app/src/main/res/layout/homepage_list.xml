@@ -44,6 +44,14 @@
                     android:ellipsize="end"
                     android:maxLines="2"
                     tools:text="@string/description_listview" />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btn_set_detail"
+                    android:textSize="11sp"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    android:text="Detail"
+                    android:layout_weight="1"/>
             </LinearLayout>
 
         </RelativeLayout>
